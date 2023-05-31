@@ -42,7 +42,7 @@
 ## 项目启动
 将项目克隆到本地
 ```
-git clone https://github.com/wustghj/SimpleServer
+git clone https://github.com/cocoyanf/SimpleWebServer
 // 还要添加jsoncpp子模块，在项目根目录下执行
 git submodule update --init --recursive
 ```
