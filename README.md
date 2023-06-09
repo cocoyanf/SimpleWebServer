@@ -42,7 +42,7 @@
 ## 项目启动
 将项目克隆到本地
 ```
-git clone https://github.com/cocoyanf/SimpleWebServer
+git clone -b upload https://github.com/Sakura1221/SimpleWebServer.git
 // 还要添加jsoncpp子模块，在项目根目录下执行
 git submodule update --init --recursive
 ```
@@ -74,12 +74,12 @@ INSERT INTO user(username, passwd) VALUES('username', 'password');
 然后编译运行
 ```
 make
-sh start.sh
+./bin/simpleserver
 ```
 浏览器访问
 ```
-127.0.0.1
-#80是在main函数中传入的服务器监听端口,http默认端口
+127.0.0.1:9006
+#9006是在main函数中传入的服务器监听端口
 ```
 ## TODO
 - config配置
@@ -88,4 +88,4 @@ sh start.sh
 ## 致谢
 Linux高性能服务器编程，游双著
 
-[Sakura1221/WebServer](https://github.com/Sakura1221/SimpleWebServer)
+[markparticle/WebServer](https://github.com/markparticle/WebServer)

@@ -1,6 +1,5 @@
 #include "webserver.h"
-#include <assert.h>
-#include <iostream>
+
 using namespace std;
 
 //服务器相关参数包括连接参数、数据库参数、线程池参数、日志参数
@@ -13,8 +12,6 @@ WebServer::WebServer(
     port(port), openLinger(optLinger), timeoutMs(timeoutMs), shutdown(false),
     timer(new HeapTimer()), epoller(new Epoller())
 {
-    //
-    std::cout<<port<<std::endl;
     //内部调用malloc动态分配缓存
     srcDir = getcwd(nullptr, 256);
     assert(srcDir);
@@ -289,13 +286,11 @@ bool WebServer::initSocket()
 {
     int ret;
     struct sockaddr_in addr;
-    //设置可以使用root用户端口
-    if (port > 65536 )
+    if (port > 65536 || port < 1024)
     {
         LOG_ERROR("port: %d error!", port);
         return false;
     }
-    assert(port>=0);
     addr.sin_family = AF_INET;
     addr.sin_addr.s_addr = htonl(INADDR_ANY);
     addr.sin_port = htons(port);
