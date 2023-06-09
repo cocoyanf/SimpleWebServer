@@ -1,5 +1,5 @@
 # SimpleWebServer
-基于Cpp11实现的高性能Web服务器，代码简洁，注释详尽，适合新手入门
+基于Cpp11实现的高性能Web服务器，代码简洁，注释详尽，用于学习网络编程
 ## 特性
 - 利用Epoll与线程池实现Reactor高并发模型
 - 利用状态机与正则实现HTTP请求报文解析，可同时处理GET与POST请求
@@ -13,7 +13,7 @@
 ## 环境要求
 - Linux
 - C++11
-- MySQL 5.7.31
+- MySQL 8.0.33
 - jsoncpp 
 ## 目录树
 ```
@@ -42,7 +42,7 @@
 ## 项目启动
 将项目克隆到本地
 ```
-git clone -b upload https://github.com/Sakura1221/SimpleWebServer.git
+git clone https://github.com/cocoyanf/SimpleWebServer.git
 // 还要添加jsoncpp子模块，在项目根目录下执行
 git submodule update --init --recursive
 ```
@@ -78,8 +78,9 @@ make
 ```
 浏览器访问
 ```
-127.0.0.1:9006
-#9006是在main函数中传入的服务器监听端口
+ubuntu本地测试：127.0.0.1:4198
+winodws测试：192.168.128.128:4198
+#4198是在main函数中传入的服务器监听端口
 ```
 ## TODO
 - config配置
@@ -88,4 +89,4 @@ make
 ## 致谢
 Linux高性能服务器编程，游双著
 
-[markparticle/WebServer](https://github.com/markparticle/WebServer)
+[Sakura1221/WebServer](https://github.com/Sakura1221/SimpleWebServer)
